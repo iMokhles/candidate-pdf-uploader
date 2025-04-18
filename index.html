@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidate PDF Uploader</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="upload">
+          Upload Candidates
+        </button>
+        <button class="tab-btn" data-tab="settings">Settings</button>
+      </div>
+
+      <div class="tab-content active" id="upload-tab">
+        <h1>Candidate PDF Uploader</h1>
+
+        <div class="current-file">
+          <p>No PDF selected</p>
+          <button id="select-pdf-btn">Select PDF</button>
+        </div>
+
+        <div class="form">
+          <div class="form-group">
+            <label for="name">Candidate Name:</label>
+            <input type="text" id="name" placeholder="Enter candidate name" />
+          </div>
+
+          <div class="form-group">
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" placeholder="Enter feedback"></textarea>
+          </div>
+
+          <div id="custom-columns"></div>
+
+          <div class="form-actions">
+            <button id="add-custom-column">Add Custom Column</button>
+            <button id="upload-btn" disabled>Upload and Track</button>
+          </div>
+        </div>
+
+        <div class="results">
+          <h3>Results</h3>
+          <div id="results-content"></div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="settings-tab">
+        <h1>Settings</h1>
+
+        <div class="form">
+          <div class="form-group">
+            <label>Google Service Account Credentials:</label>
+            <div class="file-selector">
+              <span id="credentials-path">No file selected</span>
+              <button id="select-credentials-btn">Select Credentials</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="spreadsheet-id">Google Spreadsheet ID:</label>
+            <input
+              type="text"
+              id="spreadsheet-id"
+              placeholder="Spreadsheet ID from URL"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="sheet-name">Sheet Name:</label>
+            <input type="text" id="sheet-name" placeholder="Sheet1" />
+          </div>
+
+          <div class="form-group">
+            <label for="folder-id">Google Drive Folder ID (optional):</label>
+            <input
+              type="text"
+              id="folder-id"
+              placeholder="Folder ID from URL"
+            />
+          </div>
+
+          <div class="form-group">
+            <button id="save-config-btn">Save Configuration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
